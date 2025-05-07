@@ -126,9 +126,17 @@
         });
 
         document.getElementById(`resetBtn_${moduleId}`).addEventListener("click", function () {
-            Object.keys(aktualisIndexek).forEach(k => aktualisIndexek[k] = 1);
-            frissitKep();
+            Object.keys(kategoriaMap).forEach(kategoria => {
+                aktualisIndexek[kategoria] = 1;
+                const info = kategoriaMap[kategoria];
+                const alapSrc = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}1.${info.ext}`;
+                const targetImg = document.getElementById(`figuraKeszito${kategoria}_${moduleId}`);
+                if (targetImg) {
+                    targetImg.src = alapSrc;
+                }
+            });
         });
+
 
         function frissitKep() {
             const info = kategoriaMap[aktualisKategoria];
@@ -146,5 +154,18 @@
             const div = document.getElementById(`elonezetDiv${kategoria}_${moduleId}`);
             if (div) div.style.display = "block";
         }
+
+        document.getElementById(`addToPreviewBtn_${moduleId}`).addEventListener("click", function () {
+            const info = kategoriaMap[aktualisKategoria];
+            const index = aktualisIndexek[aktualisKategoria];
+            const src = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}${index}.${info.ext}`;
+
+            // Bal oldali (kiválasztott) kép frissítése
+            const targetImg = document.getElementById(`figuraKeszito${aktualisKategoria}_${moduleId}`);
+            if (targetImg) {
+                targetImg.src = src;
+            }
+        });
+
     });
 </script>
