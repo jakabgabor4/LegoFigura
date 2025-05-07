@@ -8,19 +8,19 @@
             <h3 class="panel-bal-fo-cim">Figura előnézete</h3>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioHajSapka_<%= ModuleId %>">
-                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hair.jpg" alt="Haj/Sapka" class="figura-keszito-resz"/>
+                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hairs/hair1.png" alt="Haj/Sapka" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFej_<%= ModuleId %>">
-                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/head.jpg" alt="Fej" class="figura-keszito-resz"/>
+                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/heads/head1.png" alt="Fej" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFelsoTest_<%= ModuleId %>">
-                <img id="figuraKeszitoFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torso.jpg" alt="Felső Test" class="figura-keszito-resz"/>
+                <img id="figuraKeszitoFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torsos/torso1.jpg" alt="Felső Test" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioLab_<%= ModuleId %>">
-                <img id="figuraKeszitoLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs.jpg" alt="Láb" class="figura-keszito-resz"/>
+                <img id="figuraKeszitoLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs/legs1.png" alt="Láb" class="figura-keszito-resz" />
             </div>
 
         </div>
@@ -40,19 +40,19 @@
 
                 <div id="figuraElonezet_<%= ModuleId %>" class="figura-elonezet">
                     <div id="elonezetDivLab_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs.jpg" alt="Láb" class="figura-resz" />
+                        <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs/legs1.png" alt="Láb" class="figura-resz" />
                     </div>
                     <div id="elonezetDivFelsoTest_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torso.jpg" alt="Felső Test" class="figura-resz" />
+                        <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torsos/torso1.jpg" alt="Felső Test" class="figura-resz" />
                     </div>
                     <div id="elonezetDivFej_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/head.jpg" alt="Fej" class="figura-resz" />
+                        <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/heads/head1.png" alt="Fej" class="figura-resz" />
                     </div>
                     <div id="elonezetDivHajSapka_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hair.jpg" alt="Haj/Sapka" class="figura-resz" />
+                        <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hairs/hair1.png" alt="Haj/Sapka" class="figura-resz" />
                     </div>
                     <div id="elonezetDivEszkoz_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Images/testreszek/sword.jpg" alt="Eszköz" class="figura-resz" />
+                        <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Images/testreszek/accessories/accessories1.png" alt="Eszköz" class="figura-resz" />
                     </div>
                 </div>
 
@@ -81,39 +81,70 @@
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Az összes kategória gomb lekérdezése
-        const add = document.getElementById("addToPreviewBtn_<%= ModuleId %>");
-        const buttons = document.querySelectorAll(".kategoria-gomb");
-        const reset = document.getElementById("resetBtn_<%= ModuleId %>");
-        
-        
+        const moduleId = "<%= ModuleId %>";
+        const maxKepekSzama = 5;
 
+        let aktualisKategoria = "HajSapka";
+        let aktualisIndexek = {
+            HajSapka: 1,
+            Fej: 1,
+            FelsoTest: 1,
+            Lab: 1,
+            Eszkoz: 1
+        };
+
+        const kategoriaMap = {
+            HajSapka: { path: "hairs", prefix: "hair", ext: "png" },
+            Fej: { path: "heads", prefix: "head", ext: "png" },
+            FelsoTest: { path: "torsos", prefix: "torso", ext: "jpg" },
+            Lab: { path: "legs", prefix: "legs", ext: "png" },
+            Eszkoz: { path: "accessories", prefix: "accessories", ext: "png" }
+        };
+
+        const buttons = document.querySelectorAll(".kategoria-gomb");
         buttons.forEach(button => {
             button.addEventListener("click", function () {
-                const targetPart = this.dataset.kategoria; // Melyik testrész változik
-
-                // Megkeressük az összes kép elemet és elrejtjük
-                document.querySelectorAll(".figura-resz-div").forEach(div => {
-                    div.style.display = "none";
-                });
-
-                // Csak a kiválasztott testrész képét jelenítjük meg
-                const figuraReszDiv = document.getElementById(`elonezetDiv${targetPart}_<%= ModuleId %>`);
-
-                if (figuraResz) {
-                    figuraReszDiv.style.display = "block";
-                }
+                aktualisKategoria = this.dataset.kategoria;
+                aktualisIndexek[aktualisKategoria] = 1;
+                frissitKep();
+                megjelenitDiv(aktualisKategoria);
             });
         });
-        reset.addEventListener("click", function () {
-            // Megkeressük az összes kép elemet és elrejtjük
-            document.querySelectorAll(".figura-resz").forEach(img => {
-                img.style.display = "none";
+
+        document.getElementById(`balGomb_${moduleId}`).addEventListener("click", function () {
+            if (aktualisIndexek[aktualisKategoria] > 1) {
+                aktualisIndexek[aktualisKategoria]--;
+                frissitKep();
+            }
+        });
+
+        document.getElementById(`jobbGomb_${moduleId}`).addEventListener("click", function () {
+            if (aktualisIndexek[aktualisKategoria] < maxKepekSzama) {
+                aktualisIndexek[aktualisKategoria]++;
+                frissitKep();
+            }
+        });
+
+        document.getElementById(`resetBtn_${moduleId}`).addEventListener("click", function () {
+            Object.keys(aktualisIndexek).forEach(k => aktualisIndexek[k] = 1);
+            frissitKep();
+        });
+
+        function frissitKep() {
+            const info = kategoriaMap[aktualisKategoria];
+            const index = aktualisIndexek[aktualisKategoria];
+            const img = document.getElementById(`elonezet${aktualisKategoria}_${moduleId}`);
+            const path = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}${index}.${info.ext}`;
+            img.src = path;
+            img.style.display = "block";
+        }
+
+        function megjelenitDiv(kategoria) {
+            document.querySelectorAll(".figura-resz-div").forEach(div => {
+                div.style.display = "none";
             });
-        });
-        add.addEventListener("click", function () {
-            
-        });
+            const div = document.getElementById(`elonezetDiv${kategoria}_${moduleId}`);
+            if (div) div.style.display = "block";
+        }
     });
-
 </script>
