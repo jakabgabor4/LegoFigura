@@ -34,24 +34,31 @@
                 <button type="button" class="kategoria-gomb" data-kategoria="Eszkoz">Eszköz</button>
                 <button type="button" class="kategoria-gomb" data-kategoria="Lab">Láb</button>
             </div>
-            
-            <div id="figuraElonezet_<%= ModuleId %>" class="figura-elonezet">
-                <div id="elonezetDivLab_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                    <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs.jpg" alt="Láb" class="figura-resz" />
+
+            <div class="figura-lapozo-container">
+                <button type="button" class="lapozo-gomb" id="balGomb_<%= ModuleId %>">◀</button>
+
+                <div id="figuraElonezet_<%= ModuleId %>" class="figura-elonezet">
+                    <div id="elonezetDivLab_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs.jpg" alt="Láb" class="figura-resz" />
+                    </div>
+                    <div id="elonezetDivFelsoTest_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torso.jpg" alt="Felső Test" class="figura-resz" />
+                    </div>
+                    <div id="elonezetDivFej_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/head.jpg" alt="Fej" class="figura-resz" />
+                    </div>
+                    <div id="elonezetDivHajSapka_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hair.jpg" alt="Haj/Sapka" class="figura-resz" />
+                    </div>
+                    <div id="elonezetDivEszkoz_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Images/testreszek/sword.jpg" alt="Eszköz" class="figura-resz" />
+                    </div>
                 </div>
-                <div id="elonezetDivFelsoTest_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                    <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torso.jpg" alt="Felső Test" class="figura-resz" />
-                </div>
-                <div id="elonezetDivFej_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                    <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/head.jpg" alt="Fej" class="figura-resz" />
-                </div>
-                <div id="elonezetDivHajSapka_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                    <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hair.jpg" alt="Haj/Sapka" class="figura-resz" />
-                </div>
-                <div id="elonezetDivEszkoz_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                    <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Images/testreszek/sword.jpg" alt="Eszköz" class="figura-resz" />
-                </div>
+
+                <button type="button" class="lapozo-gomb" id="jobbGomb_<%= ModuleId %>">▶</button>
             </div>
+
 
             <div class="ar-kijelzes">
                 <span>Összeállított figura ára: </span>
