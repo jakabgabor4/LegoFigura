@@ -175,7 +175,9 @@
 
         async function getProducts() {
             try {
-                const response = await fetch('http://www.dnndev.me/DesktopModules/Hotcakes/API/rest/v1/categories?key=1-261da741-f248-42b1-bf1e-22a599d52087', {
+                // http://rendfejl10003.northeurope.cloudapp.azure.com/
+                // dev :http://www.dnndev.me/
+                const response = await fetch('http://rendfejl10003.northeurope.cloudapp.azure.com/DesktopModules/Hotcakes/API/rest/v1/categories?key=1-9f81dabb-d513-43b3-a568-13b7282b6ce0', {
                     method: 'GET',
                 });
                 if (response.ok) {
@@ -191,8 +193,8 @@
         }
         function displayProducts(products) {
             const productContainer = document.getElementById('product-container');
-            console.log(products["Content"][0]["Bvin"]);
-            productContainer.innerHTML = products["Content"][0]["Bvin"];
+            console.log(products["Content"]);
+            productContainer.innerHTML = products;
 
             //products.forEach(product => {
             //    const image = document.createElement('img');
