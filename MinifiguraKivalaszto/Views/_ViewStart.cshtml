@@ -136,10 +136,19 @@
         displayProducts();
         
 
-        var ar = 0;
-        var prevCategory = "";
-        var prevAr = 0;
+        let arak = {
+            HajSapka: 800,
+            Fej: 950,
+            FelsoTest: 1000,
+            Lab: 400,
+            Eszkoz: 400
+        };
+
         const moduleId = "<%= ModuleId %>";
+
+        const sum = Object.values(arak).reduce((acc, value) => acc + value, 0);
+        document.getElementById(`figuraAr_${moduleId}`).innerHTML = sum + " Ft";
+
         const maxKepekSzama = 3;
 
         let aktualisKategoria = "HajSapka";
@@ -189,6 +198,17 @@
                 }
                 console.log(alapSrc);
             });
+
+            arak = {
+                HajSapka: 800,
+                Fej: 950,
+                FelsoTest: 1000,
+                Lab: 400,
+                Eszkoz: 400
+            };
+
+            const sum = Object.values(arak).reduce((acc, value) => acc + value, 0);
+            document.getElementById(`figuraAr_${moduleId}`).innerHTML = sum + " Ft";
         });
 
 
@@ -226,12 +246,11 @@
                 targetImg.src = src;
             }
             // ár hozzáadása
-            if (prevCategory != aktualisKategoria || prevAr != ProductsInCategories[aktualisKategoria][index]["SitePrice"]) {
-                prevCategory = aktualisKategoria;
-                prevAr = ProductsInCategories[aktualisKategoria][index]["SitePrice"];
-                ar += ProductsInCategories[aktualisKategoria][index]["SitePrice"];
-                document.getElementById(`figuraAr_${moduleId}`).innerHTML = ar + " Ft";
-            }
+            console.log(ProductsInCategories[aktualisKategoria][index]["SitePrice"]);
+            arak[aktualisKategoria] = ProductsInCategories[aktualisKategoria][index]["SitePrice"];
+            const sum = Object.values(arak).reduce((acc, value) => acc + value, 0);
+
+            document.getElementById(`figuraAr_${moduleId}`).innerHTML = sum + " Ft";
         });
 
 
