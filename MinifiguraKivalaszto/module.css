@@ -13,9 +13,14 @@
     --figura-error-text: #721c24; /* Hiba üzenet szöveg */
 }
 
+/* Fogalmam sincs mi ez a div, viszont mindig megjelenik, ezért egyszerűen nem jelenítem meg: */
+#Items-396 {
+    display: none;
+}
+
 /* --- Modul Fő Konténere --- */
 .figura-keszito-modul {
-    font-family: Arial, Helvetica, sans-serif; 
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--figura-text-color);
     background-color: var(--figura-bg-color);
     padding: 20px;
@@ -81,7 +86,7 @@
     /* Kategória szekciók stílusa */
     .alkatresz-kategoria-szekcio {
         width: 100%;
-        padding: 5px 10px; 
+        padding: 0; 
         text-align: center;
     }
 
@@ -95,16 +100,16 @@
         margin-right: auto;
         
     }
+
 /* --- Jobb Panel (Előnézet és Műveletek) --- */
 .panel-jobb {
-    flex: 2; 
-    min-width: 300px; 
+    flex: 2;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    gap: 20px; 
+    align-items: center;
+    gap: 20px;
     padding: 15px;
-    
 }
 
 /* --- Kategória Választó Gombok --- */
@@ -228,6 +233,7 @@
         font-weight: bold;
         transition: background-color 0.2s ease, box-shadow 0.2s ease;
         min-width: 120px;
+        
     }
 
        
@@ -342,6 +348,9 @@
         padding: 15px; /* Kisebb padding */
     }
 }
+
+
+
 
 /* Kisebb mobil méret */
 @media (max-width: 480px) {
