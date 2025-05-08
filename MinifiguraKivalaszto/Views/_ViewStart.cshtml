@@ -8,19 +8,19 @@
             <h3 class="panel-bal-fo-cim">Figura előnézete</h3>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioHajSapka_<%= ModuleId %>">
-                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hairs/hair1.png" alt="Haj/Sapka" class="figura-keszito-resz" />
+                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/5395d9ed-49a0-46ed-9545-4d751c913e54/medium/black-bowler-hat-front_b51abf95.png" alt="Haj/Sapka" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFej_<%= ModuleId %>">
-                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/heads/head1.png" alt="Fej" class="figura-keszito-resz" />
+                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/df3b6ccc-8129-40f1-987c-9fd26c3ede5e/medium/CheerfulSmile-Y_480x480.png" alt="Fej" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFelsoTest_<%= ModuleId %>">
-                <img id="figuraKeszitoFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torsos/torso1.jpg" alt="Felső Test" class="figura-keszito-resz" />
+                <img id="figuraKeszitoFelsoTest_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/bd1c8910-5547-46f4-8e66-9e58b91dbdb7/medium/ButtonedCardigan-ProductImageNEW.png" alt="Felső Test" class="figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioLab_<%= ModuleId %>">
-                <img id="figuraKeszitoLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs/legs1.png" alt="Láb" class="figura-keszito-resz" />
+                <img id="figuraKeszitoLab_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/884c001d-29e8-4296-a89b-febbf85a0972/medium/blueGrey_480x480.png" alt="Láb" class="figura-keszito-resz" />
             </div>
 
         </div>
@@ -40,19 +40,19 @@
 
                 <div id="figuraElonezet_<%= ModuleId %>" class="figura-elonezet">
                     <div id="elonezetDivLab_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Images/testreszek/legs/legs1.png" alt="Láb" class="figura-resz" />
+                        <img id="elonezetLab_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/884c001d-29e8-4296-a89b-febbf85a0972/medium/blueGrey_480x480.png" alt="Láb" class="figura-resz" />
                     </div>
                     <div id="elonezetDivFelsoTest_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Images/testreszek/torsos/torso1.jpg" alt="Felső Test" class="figura-resz" />
+                        <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/bd1c8910-5547-46f4-8e66-9e58b91dbdb7/medium/ButtonedCardigan-ProductImageNEW.png" alt="Felső Test" class="figura-resz" />
                     </div>
                     <div id="elonezetDivFej_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Images/testreszek/heads/head1.png" alt="Fej" class="figura-resz" />
+                        <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/df3b6ccc-8129-40f1-987c-9fd26c3ede5e/medium/CheerfulSmile-Y_480x480.png" alt="Fej" class="figura-resz" />
                     </div>
                     <div id="elonezetDivHajSapka_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Images/testreszek/hairs/hair1.png" alt="Haj/Sapka" class="figura-resz" />
+                        <img id="elonezetHajSapka_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/5395d9ed-49a0-46ed-9545-4d751c913e54/medium/black-bowler-hat-front_b51abf95.png" alt="Haj/Sapka" class="figura-resz" />
                     </div>
                     <div id="elonezetDivEszkoz_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
-                        <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Images/testreszek/accessories/accessories1.png" alt="Eszköz" class="figura-resz" />
+                        <img id="elonezetEszkoz_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/38374675-2bcb-4a32-adda-c6f4ed7e5467/medium/Banana-MainImage_480x480.png" alt="Eszköz" class="figura-resz" />
                     </div>
                 </div>
 
@@ -78,77 +78,128 @@
     </div>
 
 
-
-
-</div>
-<div id="product-container"></div> <!-- A képek itt fognak megjelenni -->
-
 <script>
-
+    
 
     document.addEventListener("DOMContentLoaded", function () {
+        var ProductsInCategories = {};
+        async function getProducts(categoryId) {
+            try {
+                // http://rendfejl10003.northeurope.cloudapp.azure.com/
+                // dev :http://www.dnndev.me/
+                const endPoint = "products";
+                const key = "1-9f81dabb-d513-43b3-a568-13b7282b6ce0";
+                const response = await fetch('http://rendfejl10003.northeurope.cloudapp.azure.com/DesktopModules/Hotcakes/API/rest/v1/' + endPoint + "?key=" + key + "&bycategory=" + categoryId, {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    const products = await response.json();
+                    //console.log(products);
+                    return products;
+                } else {
+                    console.error('API hiba:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Hiba történt a kérés során:', error);
+            }
+        }
+        async function displayProducts() {
+            // A képek elérhetősége a virtuális gépen: pl. Portals/0/Hotcakes/Data/products/c4420e40-0c66-4f1c-b1b0-9360fc369f40/medium/32_480x480.png
+            const CategoryIdsDict = {
+                "Fej": "6A456047-FEB7-4096-8E0D-FB4F941818D8",
+                "HajSapka": "B417B28C-88E8-4E42-A53F-CC1035AF5EAC",
+                "FelsoTest": "3BE4AF41-09CB-4B03-8A7C-DC74205BE878",
+                //"Kez": "A31DBBA9-39D1-4313-8B3D-02A7F8A22A31",
+                "Lab": "FAC5058F-DDEE-449F-A50D-6D84FC0850EF",
+                "Eszkoz": "DA6D27B7-178F-4BBD-AE15-253783981012"
+            };
+            const productContainer = document.getElementById('product-container');
+
+            //console.log(products.Content.Products);
+            // a termékek adatai egy kifezezetten a modulra tervezett dictionaryben:
+            ProductsInCategories = {
+                "Fej": [],
+                "HajSapka": [],
+                "FelsoTest": [],
+                //"Kez": [],
+                "Lab": [],
+                "Eszkoz": []
+            };
+
+            for (const key of Object.keys(CategoryIdsDict)) {
+                const productsInCategory = await getProducts(CategoryIdsDict[key]);
+                ProductsInCategories[key] = productsInCategory.Content.Products;
+            }
+            
+
+        }
+        displayProducts();
+        
+
+        
         const moduleId = "<%= ModuleId %>";
-        const maxKepekSzama = 5;
+        const maxKepekSzama = 3;
 
         let aktualisKategoria = "HajSapka";
         let aktualisIndexek = {
-            HajSapka: 1,
-            Fej: 1,
-            FelsoTest: 1,
-            Lab: 1,
-            Eszkoz: 1
-        };
-
-        const kategoriaMap = {
-            HajSapka: { path: "hairs", prefix: "hair", ext: "png" },
-            Fej: { path: "heads", prefix: "head", ext: "png" },
-            FelsoTest: { path: "torsos", prefix: "torso", ext: "jpg" },
-            Lab: { path: "legs", prefix: "legs", ext: "png" },
-            Eszkoz: { path: "accessories", prefix: "accessories", ext: "png" }
+            HajSapka: 0,
+            Fej: 0,
+            FelsoTest: 0,
+            Lab: 0,
+            Eszkoz: 0
         };
 
         const buttons = document.querySelectorAll(".kategoria-gomb");
         buttons.forEach(button => {
             button.addEventListener("click", function () {
                 aktualisKategoria = this.dataset.kategoria;
-                aktualisIndexek[aktualisKategoria] = 1;
+                aktualisIndexek[aktualisKategoria] = 0;
                 frissitKep();
                 megjelenitDiv(aktualisKategoria);
             });
         });
 
         document.getElementById(`balGomb_${moduleId}`).addEventListener("click", function () {
-            if (aktualisIndexek[aktualisKategoria] > 1) {
+            if (aktualisIndexek[aktualisKategoria] > 0) {
                 aktualisIndexek[aktualisKategoria]--;
                 frissitKep();
             }
         });
 
         document.getElementById(`jobbGomb_${moduleId}`).addEventListener("click", function () {
-            if (aktualisIndexek[aktualisKategoria] < maxKepekSzama) {
+            if (aktualisIndexek[aktualisKategoria] < maxKepekSzama-1) {
                 aktualisIndexek[aktualisKategoria]++;
                 frissitKep();
             }
         });
 
         document.getElementById(`resetBtn_${moduleId}`).addEventListener("click", function () {
-            Object.keys(kategoriaMap).forEach(kategoria => {
-                aktualisIndexek[kategoria] = 1;
-                const info = kategoriaMap[kategoria];
-                const alapSrc = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}1.${info.ext}`;
+            Object.keys(ProductsInCategories).forEach(kategoria => {
+                aktualisIndexek[kategoria] = 0;
+                
+                const index = aktualisIndexek[kategoria];
+                const bvin = ProductsInCategories[kategoria][index]["Bvin"];
+                const productImg = ProductsInCategories[kategoria][index]["ImageFileMedium"];
+                const alapSrc = `/Portals/0/Hotcakes/Data/products/${bvin}/medium/${productImg}`;
                 const targetImg = document.getElementById(`figuraKeszito${kategoria}_${moduleId}`);
                 if (targetImg) {
                     targetImg.src = alapSrc;
                 }
+                console.log(alapSrc);
             });
         });
 
 
+
+
         function frissitKep() {
-            const info = kategoriaMap[aktualisKategoria];
+            //Portals/0/Hotcakes/Data/products/c4420e40-0c66-4f1c-b1b0-9360fc369f40/medium/32_480x480.png
             const index = aktualisIndexek[aktualisKategoria];
+            console.log(ProductsInCategories[aktualisKategoria]);
+            const bvin = ProductsInCategories[aktualisKategoria][index]["Bvin"];
+            const productImg = ProductsInCategories[aktualisKategoria][index]["ImageFileMedium"];
             const img = document.getElementById(`elonezet${aktualisKategoria}_${moduleId}`);
-            const path = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}${index}.${info.ext}`;
+            const path = `/Portals/0/Hotcakes/Data/products/${bvin}/medium/${productImg}`;
             img.src = path;
             img.style.display = "block";
         }
@@ -162,9 +213,10 @@
         }
 
         document.getElementById(`addToPreviewBtn_${moduleId}`).addEventListener("click", function () {
-            const info = kategoriaMap[aktualisKategoria];
             const index = aktualisIndexek[aktualisKategoria];
-            const src = `/Portals/0/Images/testreszek/${info.path}/${info.prefix}${index}.${info.ext}`;
+            const bvin = ProductsInCategories[aktualisKategoria][index]["Bvin"];
+            const productImg = ProductsInCategories[aktualisKategoria][index]["ImageFileMedium"];
+            const src = `/Portals/0/Hotcakes/Data/products/${bvin}/medium/${productImg}`;
 
             // Bal oldali (kiválasztott) kép frissítése
             const targetImg = document.getElementById(`figuraKeszito${aktualisKategoria}_${moduleId}`);
@@ -172,39 +224,6 @@
                 targetImg.src = src;
             }
         });
-
-        async function getProducts() {
-            try {
-                // http://rendfejl10003.northeurope.cloudapp.azure.com/
-                // dev :http://www.dnndev.me/
-                const response = await fetch('http://rendfejl10003.northeurope.cloudapp.azure.com/DesktopModules/Hotcakes/API/rest/v1/categories?key=1-9f81dabb-d513-43b3-a568-13b7282b6ce0', {
-                    method: 'GET',
-                });
-                if (response.ok) {
-                    const products = await response.json();
-                    console.log(products);
-                    displayProducts(products);
-                } else {
-                    console.error('API hiba:', response.statusText);
-                }
-            } catch (error) {
-                console.error('Hiba történt a kérés során:', error);
-            }
-        }
-        function displayProducts(products) {
-            const productContainer = document.getElementById('product-container');
-            console.log(products["Content"]);
-            productContainer.innerHTML = products;
-
-            //products.forEach(product => {
-            //    const image = document.createElement('img');
-            //    image.src = product.ImageUrl;
-            //    image.alt = product.ProductName;
-            //    productContainer.appendChild(image);
-            //});
-
-        }
-        getProducts();
 
 
     });
