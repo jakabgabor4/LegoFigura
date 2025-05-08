@@ -136,7 +136,9 @@
         displayProducts();
         
 
-        
+        var ar = 0;
+        var prevCategory = "";
+        var prevAr = 0;
         const moduleId = "<%= ModuleId %>";
         const maxKepekSzama = 3;
 
@@ -222,6 +224,13 @@
             const targetImg = document.getElementById(`figuraKeszito${aktualisKategoria}_${moduleId}`);
             if (targetImg) {
                 targetImg.src = src;
+            }
+            // ár hozzáadása
+            if (prevCategory != aktualisKategoria || prevAr != ProductsInCategories[aktualisKategoria][index]["SitePrice"]) {
+                prevCategory = aktualisKategoria;
+                prevAr = ProductsInCategories[aktualisKategoria][index]["SitePrice"];
+                ar += ProductsInCategories[aktualisKategoria][index]["SitePrice"];
+                document.getElementById(`figuraAr_${moduleId}`).innerHTML = ar + " Ft";
             }
         });
 
