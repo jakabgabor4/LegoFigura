@@ -78,8 +78,14 @@
     </div>
 
 
+
+
 </div>
+<div id="product-container"></div> <!-- A képek itt fognak megjelenni -->
+
 <script>
+
+
     document.addEventListener("DOMContentLoaded", function () {
         const moduleId = "<%= ModuleId %>";
         const maxKepekSzama = 5;
@@ -166,6 +172,38 @@
                 targetImg.src = src;
             }
         });
+
+        async function getProducts() {
+            try {
+                const response = await fetch('http://www.dnndev.me/DesktopModules/Hotcakes/API/rest/v1/categories?key=1-261da741-f248-42b1-bf1e-22a599d52087', {
+                    method: 'GET',
+                });
+                if (response.ok) {
+                    const products = await response.json();
+                    console.log(products);
+                    displayProducts(products);
+                } else {
+                    console.error('API hiba:', response.statusText);
+                }
+            } catch (error) {
+                console.error('Hiba történt a kérés során:', error);
+            }
+        }
+        function displayProducts(products) {
+            const productContainer = document.getElementById('product-container');
+            console.log(products["Content"][0]["Bvin"]);
+            productContainer.innerHTML = products["Content"][0]["Bvin"];
+
+            //products.forEach(product => {
+            //    const image = document.createElement('img');
+            //    image.src = product.ImageUrl;
+            //    image.alt = product.ProductName;
+            //    productContainer.appendChild(image);
+            //});
+
+        }
+        getProducts();
+
 
     });
 </script>
