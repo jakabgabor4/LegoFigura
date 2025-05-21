@@ -64,6 +64,10 @@
                 <button type="button" class="lapozo-gomb" id="jobbGomb_<%= ModuleId %>">▶</button>
             </div>
 
+            <div class="aktualis-elem-ar-kijelzes">
+                <span>Aktuális elem ára: </span>
+                <strong id="aktualisElemAr_<%= ModuleId %>">0 Ft</strong>
+            </div>
 
             <div class="ar-kijelzes">
                 <span>Összeállított figura ára: </span>
@@ -198,6 +202,7 @@
                 aktualisIndexek[aktualisKategoria] = 0;
                 frissitKep();
                 megjelenitDiv(aktualisKategoria);
+                frissitAktualisElemAr();
             });
         });
 
@@ -212,6 +217,7 @@
                 console.log("Negatív index!!");
             }
             frissitKep();
+            frissitAktualisElemAr();
         });
 
         document.getElementById(`jobbGomb_${moduleId}`).addEventListener("click", function () {
@@ -222,6 +228,7 @@
                 aktualisIndexek[aktualisKategoria] = 0;
             }
             frissitKep();
+            frissitAktualisElemAr();
         });
 
         document.getElementById(`resetBtn_${moduleId}`).addEventListener("click", function () {
@@ -249,9 +256,18 @@
 
             const sum = Object.values(arak).reduce((acc, value) => acc + value, 0);
             document.getElementById(`figuraAr_${moduleId}`).innerHTML = sum + " Ft";
+            frissitAktualisElemAr();
         });
 
-
+        function frissitAktualisElemAr() {
+            const index = aktualisIndexek[aktualisKategoria];
+            if (ProductsInCategories[aktualisKategoria] && ProductsInCategories[aktualisKategoria][index]) {
+                const currentItemPrice = ProductsInCategories[aktualisKategoria][index]["SitePrice"];
+                document.getElementById(`aktualisElemAr_${moduleId}`).innerHTML = currentItemPrice + " Ft";
+            } else {
+                document.getElementById(`aktualisElemAr_${moduleId}`).innerHTML = "0 Ft"; 
+            }
+        }
 
 
         function frissitKep() {
@@ -264,6 +280,7 @@
             const path = `/Portals/0/Hotcakes/Data/products/${bvin}/medium/${productImg}`;
             img.src = path;
             img.style.display = "block";
+            frissitAktualisElemAr()
         }
 
         function megjelenitDiv(kategoria) {
@@ -272,6 +289,7 @@
             });
             const div = document.getElementById(`elonezetDiv${kategoria}_${moduleId}`);
             if (div) div.style.display = "block";
+            frissitAktualisElemAr()
         }
 
         document.getElementById(`addToPreviewBtn_${moduleId}`).addEventListener("click", function () {
@@ -303,6 +321,6 @@
         })
         
         // http://rendfejl10003.northeurope.cloudapp.azure.com/bevasarlokocsi?AddSku=60403&AddSkuQty=1
-
+        frissitAktualisElemAr()
     });
 </script>
