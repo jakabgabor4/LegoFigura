@@ -188,6 +188,12 @@
         const buttons = document.querySelectorAll(".kategoria-gomb");
         buttons.forEach(button => {
             button.addEventListener("click", function () {
+                buttons.forEach(btn => {
+                    btn.classList.remove("active");
+                });
+
+                this.classList.add("active");
+
                 aktualisKategoria = this.dataset.kategoria;
                 aktualisIndexek[aktualisKategoria] = 0;
                 frissitKep();

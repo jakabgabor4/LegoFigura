@@ -14,7 +14,7 @@
 }
 
 /* Fogalmam sincs mi ez a div, viszont mindig megjelenik, ezért egyszerűen nem jelenítem meg: */
-#Items-396 {
+#Items-1464 {
     display: none;
 }
 
@@ -138,7 +138,6 @@
         border-color: #aaa;
     }
 
-    /* Aktív kategória gomb stílusa (JS adja hozzá) */
     .kategoria-gomb.active {
         background-color: var(--figura-primary-accent);
         color: var(--figura-button-text);
