@@ -2,8 +2,8 @@
     --figura-bg-color: #f9f9f9; /* Modul háttérszíne */
     --figura-panel-bg: #ffffff; /* Panelek háttérszíne */
     --figura-border-color: #e0e0e0; /* Szegélyek színe */
-    --figura-primary-accent: #007bff; /* Elsődleges kiemelő szín (pl. gombok, aktív elemek) */
-    --figura-secondary-accent: #6c757d; /* Másodlagos szín (pl. reset gomb) */
+    --figura-primary-accent: rgba(225, 1, 121, 255); /* Elsődleges kiemelő szín (pl. gombok, aktív elemek) */
+    --figura-secondary-accent: rgba(2, 139, 255, 1); /* Másodlagos szín (pl. reset gomb) */
     --figura-hover-bg: #f1f1f1; /* Elemek háttérszíne hover esetén */
     --figura-text-color: #333333; /* Alap szövegszín */
     --figura-button-text: #ffffff; /* Gombok szövegszíne */
@@ -254,18 +254,18 @@
         
     }
 
-       
-        .muvelet-gombok button.dnnPrimaryAction,
-        #addToCartBtn:not(.dnnPrimaryAction) { /* Kosárba gomb alap stílusa */
+
+        .muvelet-gombok button.PrimaryAction,
+        #addToCartBtn:not(.PrimaryAction) { /* Kosárba gomb alap stílusa */
             background-color: var(--figura-primary-accent);
             color: var(--figura-button-text);
-            box-shadow: 0 2px 5px rgba(0, 123, 255, 0.3);
+            box-shadow: 0 2px 5px rgba(225, 1, 121, 0.3);
         }
 
-            .muvelet-gombok button.dnnPrimaryAction:hover,
-            #addToCartBtn:not(.dnnPrimaryAction):hover {
+            .muvelet-gombok button.PrimaryAction:hover,
+            #addToCartBtn:not(.PrimaryAction):hover {
                 opacity: 0.9;
-                box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+                box-shadow: 0 4px 8px rgba(225, 1, 121, 0.4);
             }
 
 #randomBtn { 
@@ -304,6 +304,10 @@
     }
 
 
+
+.muvelet-gombok {
+    background-color: --figura-primary-accent;
+}
 
 /* --- Reszponzív Design --- */
 
