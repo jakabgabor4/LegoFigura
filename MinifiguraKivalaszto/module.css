@@ -14,7 +14,7 @@
 }
 
 /* Fogalmam sincs mi ez a div, viszont mindig megjelenik, ezért egyszerűen nem jelenítem meg: */
-#Items-1464 {
+div[id^="Items-"] {
     display: none;
 }
 
