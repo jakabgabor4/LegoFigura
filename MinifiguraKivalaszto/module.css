@@ -91,15 +91,35 @@
     }
 
     /* Képek stílusa */
-    .figura-keszito-resz {
-        display: block;
-        width: 100px; 
-        height: 100px; 
-        object-fit: contain;
-        margin-left: auto;
-        margin-right: auto;
-        
-    }
+.figura-keszito-resz {
+    position: sticky;
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -60px;
+}
+.figura-keszito-resz-hajsapka {
+    margin-top: 0;
+    z-index: 1;
+}
+.figura-keszito-resz-eszkoz {
+    margin-top: 0;
+}
+.figura-keszito-resz-fej {
+    margin-top: -170px;
+    z-index: 10;
+}
+.figura-keszito-resz-lab {
+    margin-top: -100px;
+    z-index: 2;
+}
+.figura-keszito-resz-felsotest {
+    margin-top: -116px;
+    z-index: 9;
+}
 
 /* --- Jobb Panel (Előnézet és Műveletek) --- */
 .panel-jobb {
