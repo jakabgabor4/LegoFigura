@@ -198,15 +198,24 @@
         document.getElementById(`balGomb_${moduleId}`).addEventListener("click", function () {
             if (aktualisIndexek[aktualisKategoria] > 0) {
                 aktualisIndexek[aktualisKategoria]--;
-                frissitKep();
             }
+            else if (aktualisIndexek[aktualisKategoria] == 0) {
+                aktualisIndexek[aktualisKategoria] = kategoriaMaxKepekSzama[aktualisKategoria] - 1;
+            }
+            else {
+                console.log("Negatív index!!");
+            }
+            frissitKep();
         });
 
         document.getElementById(`jobbGomb_${moduleId}`).addEventListener("click", function () {
             if (aktualisIndexek[aktualisKategoria] < kategoriaMaxKepekSzama[aktualisKategoria] - 1) {
                 aktualisIndexek[aktualisKategoria]++;
-                frissitKep();
             }
+            else {
+                aktualisIndexek[aktualisKategoria] = 0;
+            }
+            frissitKep();
         });
 
         document.getElementById(`resetBtn_${moduleId}`).addEventListener("click", function () {
