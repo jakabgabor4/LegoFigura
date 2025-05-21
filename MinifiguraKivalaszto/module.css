@@ -268,13 +268,13 @@
                 box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
             }
 
-#resetBtn { 
+#randomBtn { 
     background-color: var(--figura-secondary-accent);
     color: var(--figura-button-text);
     box-shadow: 0 2px 5px rgba(108, 117, 125, 0.3);
 }
 
-    #resetBtn:hover {
+    #randomBtn:hover {
         background-color: #5a6268;
         box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
     }
