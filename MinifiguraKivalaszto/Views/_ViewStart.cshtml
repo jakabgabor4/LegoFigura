@@ -139,7 +139,7 @@
 
         }
         displayProducts();
-        
+
 
         let arak = {
             HajSapka: 800,
@@ -167,7 +167,14 @@
         const sum = Object.values(arak).reduce((acc, value) => acc + value, 0);
         document.getElementById(`figuraAr_${moduleId}`).innerHTML = sum + " Ft";
 
-        const maxKepekSzama = 3;
+        let kategoriaMaxKepekSzama = {
+            HajSapka: 119,
+            Fej: 94,
+            FelsoTest: 47,
+            Lab: 32,
+            Eszkoz: 20
+        };
+
 
         let aktualisKategoria = "HajSapka";
         let aktualisIndexek = {
@@ -196,7 +203,7 @@
         });
 
         document.getElementById(`jobbGomb_${moduleId}`).addEventListener("click", function () {
-            if (aktualisIndexek[aktualisKategoria] < maxKepekSzama-1) {
+            if (aktualisIndexek[aktualisKategoria] < kategoriaMaxKepekSzama[aktualisKategoria] - 1) {
                 aktualisIndexek[aktualisKategoria]++;
                 frissitKep();
             }
@@ -235,7 +242,7 @@
         function frissitKep() {
             //Portals/0/Hotcakes/Data/products/c4420e40-0c66-4f1c-b1b0-9360fc369f40/medium/32_480x480.png
             const index = aktualisIndexek[aktualisKategoria];
-            console.log(ProductsInCategories[aktualisKategoria]);
+            //console.log(ProductsInCategories[aktualisKategoria]);
             const bvin = ProductsInCategories[aktualisKategoria][index]["Bvin"];
             const productImg = ProductsInCategories[aktualisKategoria][index]["ImageFileMedium"];
             const img = document.getElementById(`elonezet${aktualisKategoria}_${moduleId}`);
