@@ -139,7 +139,18 @@
                 const productsInCategory = await getProducts(CategoryIdsDict[key]);
                 ProductsInCategories[key] = productsInCategory.Content.Products;
             }
-            
+
+            aktualisKategoria = "HajSapka"; 
+            aktualisIndexek[aktualisKategoria] = 0; 
+
+            const defaultButton = document.querySelector(`.kategoria-gomb[data-kategoria="${aktualisKategoria}"]`);
+            if (defaultButton) {
+                defaultButton.classList.add("active");
+            }
+
+            frissitKep();      
+            megjelenitDiv(aktualisKategoria); 
+            frissitAktualisElemAr(); 
 
         }
         displayProducts();
