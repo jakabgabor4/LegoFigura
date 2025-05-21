@@ -8,20 +8,24 @@
             <h3 class="panel-bal-fo-cim">Figura előnézete</h3>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioHajSapka_<%= ModuleId %>">
-                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/e0b16554-1ac6-4e68-aa22-0095ad977f71/medium/lightginger-very-straight-centreparted-bob-front_480x480.png" alt="Haj/Sapka" class="figura-keszito-resz-hajsapka figura-keszito-resz"/>
+                <img id="figuraKeszitoHajSapka_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/e0b16554-1ac6-4e68-aa22-0095ad977f71/medium/lightginger-very-straight-centreparted-bob-front_480x480.png" alt="Haj/Sapka" class="figura-keszito-resz-hajsapka figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFej_<%= ModuleId %>">
-                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/bc576fa2-1017-4ea9-9b24-0db8e2064d80/medium/HugeSmileRedLipstick-Y_480x480.png" alt="Fej" class="figura-keszito-resz-fej figura-keszito-resz"/>
+                <img id="figuraKeszitoFej_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/bc576fa2-1017-4ea9-9b24-0db8e2064d80/medium/HugeSmileRedLipstick-Y_480x480.png" alt="Fej" class="figura-keszito-resz-fej figura-keszito-resz" />
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioFelsoTest_<%= ModuleId %>">
                 <img id="figuraKeszitoFelsoTest_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/03b06476-7020-4f5d-a035-07b028f0c0ed/medium/PRODimage_dec53acb-debd-43d7-afb5-e18649070aa3_480x480.png" alt="Felső Test" class="figura-keszito-resz-felsotest figura-keszito-resz" />
             </div>
 
+            <div class="alkatresz-kategoria-szekcio" id="szekcioKez_<%= ModuleId %>">
+                <img id="figuraKeszitoKez_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/209F050A-55F6-4C87-9C03-45E70536E6D2/medium/MediumHands-ForTorsoOverlay.png" alt="Kéz" class="figura-keszito-resz-kez figura-keszito-resz" />
+            </div>
+
             <div class="alkatresz-kategoria-szekcio" id="szekcioLab_<%= ModuleId %>">
                 <img id="figuraKeszitoLab_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/688f4166-f3a7-41fa-943b-0360e74a4845/medium/Blue_480x480.png" alt="Láb" class="figura-keszito-resz-lab figura-keszito-resz" />
-                
+
             </div>
 
             <div class="alkatresz-kategoria-szekcio" id="szekcioEszkoz_<%= ModuleId %>">
@@ -36,6 +40,7 @@
                 <button type="button" class="kategoria-gomb" data-kategoria="HajSapka">Haj/Sapka</button>
                 <button type="button" class="kategoria-gomb" data-kategoria="Fej">Fej</button>
                 <button type="button" class="kategoria-gomb" data-kategoria="FelsoTest">Felső Test</button>
+                <button type="button" class="kategoria-gomb" data-kategoria="Kez">Kéz</button>
                 <button type="button" class="kategoria-gomb" data-kategoria="Eszkoz">Eszköz</button>
                 <button type="button" class="kategoria-gomb" data-kategoria="Lab">Láb</button>
             </div>
@@ -49,6 +54,9 @@
                     </div>
                     <div id="elonezetDivFelsoTest_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
                         <img id="elonezetFelsoTest_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/03b06476-7020-4f5d-a035-07b028f0c0ed/medium/PRODimage_dec53acb-debd-43d7-afb5-e18649070aa3_480x480.png" alt="Felső Test" class="figura-resz" />
+                    </div>
+                    <div id="elonezetDivKez_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
+                        <img id="elonezetKez_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/209F050A-55F6-4C87-9C03-45E70536E6D2/medium/MediumHands-ForTorsoOverlay.png" alt="Kéz" class="figura-resz" />
                     </div>
                     <div id="elonezetDivFej_<%= ModuleId %>" class="figura-resz-div" style="display: none;">
                         <img id="elonezetFej_<%= ModuleId %>" src="/Portals/0/Hotcakes/Data/products/bc576fa2-1017-4ea9-9b24-0db8e2064d80/medium/HugeSmileRedLipstick-Y_480x480.png" alt="Fej" class="figura-resz" />
@@ -118,7 +126,7 @@
                 "Fej": "6A456047-FEB7-4096-8E0D-FB4F941818D8",
                 "HajSapka": "B417B28C-88E8-4E42-A53F-CC1035AF5EAC",
                 "FelsoTest": "3BE4AF41-09CB-4B03-8A7C-DC74205BE878",
-                //"Kez": "A31DBBA9-39D1-4313-8B3D-02A7F8A22A31",
+                "Kez": "A31DBBA9-39D1-4313-8B3D-02A7F8A22A31",
                 "Lab": "FAC5058F-DDEE-449F-A50D-6D84FC0850EF",
                 "Eszkoz": "DA6D27B7-178F-4BBD-AE15-253783981012"
             };
@@ -130,7 +138,7 @@
                 "Fej": [],
                 "HajSapka": [],
                 "FelsoTest": [],
-                //"Kez": [],
+                "Kez": [],
                 "Lab": [],
                 "Eszkoz": []
             };
@@ -160,6 +168,7 @@
             HajSapka: 890,
             Fej: 890,
             FelsoTest: 1090,
+            Kez: 0, // egyenlőre ingyenes
             Lab: 790,
             Eszkoz: 590 
         };
@@ -173,6 +182,7 @@
             HajSapka: "M1_0042",
             Fej: "M2_0041",
             FelsoTest: "M3_0042",
+            Kez: "MH_00003",
             Lab: "M4_0009",
             Eszkoz: "MA_0004"
         }
@@ -186,6 +196,7 @@
             HajSapka: 119,
             Fej: 94,
             FelsoTest: 47,
+            Kez: 3,
             Lab: 32,
             Eszkoz: 20
         };
@@ -196,6 +207,7 @@
             HajSapka: 0,
             Fej: 0,
             FelsoTest: 0,
+            Kez: 0,
             Lab: 0,
             Eszkoz: 0
         };
@@ -323,7 +335,7 @@
 
         document.getElementById(`addToCartBtn_${moduleId}`).addEventListener("click", function () {
             //addToCart("M2_00002");
-            window.location.href = "http://rendfejl10003.northeurope.cloudapp.azure.com/bevasarlokocsi?AddSku=" + skuk["HajSapka"] + "," + skuk["Fej"] + "," + skuk["FelsoTest"] + "," + skuk["Lab"] + "," + skuk["Eszkoz"] + "&AddSkuQty=1,1,1,1,1";
+            window.location.href = "http://rendfejl10003.northeurope.cloudapp.azure.com/bevasarlokocsi?AddSku=" + skuk["HajSapka"] + "," + skuk["Fej"] + "," + skuk["FelsoTest"] + "," + skuk["Kez"] + "," + skuk["Lab"] + "," + skuk["Eszkoz"] + "&AddSkuQty=1,1,1,1,1,1";
         })
         
         // http://rendfejl10003.northeurope.cloudapp.azure.com/bevasarlokocsi?AddSku=60403&AddSkuQty=1

@@ -120,6 +120,10 @@
     margin-top: -116px;
     z-index: 9;
 }
+.figura-keszito-resz-kez {
+    margin-top: -216px;
+    z-index: 11;
+}
 
 /* --- Jobb Panel (Előnézet és Műveletek) --- */
 .panel-jobb {
